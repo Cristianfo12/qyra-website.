@@ -65,6 +65,17 @@ nav a:hover {
 }
 
 /* ================= SECCIÓN PRINCIPAL (HERO) ================= */
+/* OPTIMIZACIÓN DE SECCIONES GENERALES */
+/* Esto asegura que 'main' y 'habilidades' compartan el mismo espacio y centrado */
+main section, #habilidades, #sobre-mi, #contacto, #portafolio, #servicios, #inicio{
+    padding: 80px 50px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* --- LA SOLUCIÓN MÁGICA AQUÍ --- */
+    /* Crea un colchón invisible arriba del elemento para el scroll pegajoso */
+    scroll-margin-top: 90px;
+}
 main section {
     padding: 60px 50px;
     text-align: center;
@@ -182,12 +193,16 @@ footer {
    Usamos 'flex' para que las etiquetas se acomoden solas una al lado de la otra.
    'flex-wrap: wrap' permite que si no caben en una línea, bajen a la siguiente (vital para móviles).
 */
+/* ESTILOS DE HABILIDADES OPTIMIZADOS */
 .skills-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Centra las etiquetas en la pantalla. */
     gap: 15px;               /* Crea una separacion uniforme entre etiquetas */
-    margin-top: 30px;        /* Espacio superior respecto al titulo */
+    margin-top: 40px;        /* Espacio superior respecto al titulo */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Estilo individual de cada etiqueta (píldora).
@@ -196,17 +211,56 @@ footer {
 .skills-tag{
     background-color: var(--azul-corporativo); /* Usamos color principal */
     color: var(--blanco-puro);
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 50px;        /* Crea el efecto de "Pildora" redondeada */
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease; /* Buena practica: preparar para efecto hover*/
+    font-size: 0.95rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent; /* Preparamos el borde para el hover */
 }
 
 /* Buena práctica: Añadir un pequeño efecto visual al pasar el mouse */
 .skills-tag:hover{
-    background-color: var(--azul-vibrante);
+    background-color: var(--blanco-puro);
+    color: var(--azul-vibrante);
+    border: 2px solid var(--azul-vibrante);
+    transform: scale(1.1); /* Hace que la píldora crezca un poquito al tocarla */
     cursor: default;
+}
+
+/* ================= SECCIÓN SOBRE MÍ ================= */
+/* Esta regla es específica para el ID #sobre-mi. 
+   Al estar debajo de 'main section', esta regla tiene prioridad y 
+   le añade el fondo blanco y la sombra de tarjeta. */
+#sobre-mi {
+    background-color: var(--blanco-puro);
+    border-radius: 15px;    /* Bordes redondeados para que parezca una tarjeta */
+    margin-bottom: 60px;    /* Espacio antes de llegar al contacto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave profesional */
+    max-width: 990px;        /* Hacemos que el texto no sea tan ancho y sea fácil de leer */
+    margin-left: auto;      /* Centrado horizontal */
+    margin-right: auto;     /* Centrado horizontal */
+}
+
+/* ================= ESTILOS DEL MENÚ DESPLEGABLE ================= */
+#menu-check{
+    display: none; /* Escondemos el cuadrito del checkbox*/
+}
+
+.menu-icono{
+    display: none; /* Por defecto (en PC) nose ve el icono de hamburguesa*/
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-icono span{
+    width: 30px;
+    height: 4px;
+    background-color: var(--azul-corporativo);
+    border-radius: 2px;
+    transition: all 0.3s;
 }
 
 /* ================= RESPONSIVE DESIGN (MÓVILES Y TABLETS) ================= */
@@ -214,6 +268,46 @@ footer {
 /* La regla mágica: Si la pantalla tiene un ancho máximo de 768px (tamaño típico de celular/tablet) aplica esto: */
 @media (max-width: 768px) {
     
+    /* Mostramos el icono de hambuerguesa solo en moviles */
+    .menu-icono{
+        display: flex;
+    }
+
+    /* Ocultamos el menu original */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--blanco-puro);
+        display: none; /*  Aqui esta la magia: oculto por defecto*/
+        flex-direction: column;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+
+    nav Ul {
+        flex-direction: column;
+        padding: 20px;
+        gap:20px;
+    }
+
+    /* CUANDO EL CHECKBOX ESTE MARCADO, MOSTRAR EL NAV */
+    #menu-check:checked ~ nav {
+        display: block;
+    }
+
+    /* OPcional: El icono de hamburgesa se transforma en X al abrir */
+    #menu-check:checked ~ .menu-icono span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-check:checked ~ .menu-icono span:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-check:checked ~ .menu-icono span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -8px);
+    }
+
+
     /* 1. El Encabezado: En lugar de estar uno al lado del otro, ponemos el logo arriba y el menú abajo */
     header {
         flex-direction: column; 

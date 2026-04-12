@@ -12,12 +12,20 @@
         <div class="logo-container">
             <img src="assets/logos/Qyra Logo_Mesa de trabajo 1.png" alt="Logotipo QYRA">
         </div>
+
+        <input type="checkbox" id="menu-check">
+        <label for="menu-check" class="menu-icono">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li> <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -48,36 +56,38 @@
             </article>
         </section>
 
+        <section id="habilidades">
+        <h2>Mis Herramientas y habilidades</h2>
+        <div class="skills-container">
+            <div class="skills-tag">HTML5 / CSS3</div>
+            <div class="skills-tag">JavaScript</div>
+            <div class="skills-tag">SQL Server / MySQL</div>
+            <div class="skills-tag">Soperte Tecnico IT</div>
+            <div class="skills-tag">Mantenimiento de Hardware</div>
+            <div class="skills-tag">Redes y Conectividad</div>
+        </div>
+    </section>
+
         <section id="sobre-mi">
             <h2>Sobre mí</h2>
             <p>Soy un profesional apasionado por la ingeniería de sistemas, especializado en crear soluciones eficientes, desde el código fuente hasta la arquitectura de hardware.</p>
         </section>
-    </main>
+    </main>  
 
-    <section id="habilidades">
-        <h2>Mis Herramientas y habilidades</h2>
-        <div class="skills-container">
-            <div class="skill-tang">HTML5 / CSS3</div>
-            <div class="skill-tang">JavaScript</div>
-            <div class="skill-tang">SQL Server / MySQL</div>
-            <div class="skill-tang">Soperte Tecnico IT</div>
-            <div class="skill-tang">Mantenimiento de Hardware</div>
-            <div class="skill-tang">Redes y Conectividad</div>
-        </div>
-    </section>
+
 <footer>
         <section id="contacto">
             <h2>Contacto</h2>
             <p>¿Listo para optimizar tus procesos tecnológicos? Escríbeme y hablemos de tu proyecto.</p>
             
-            <form action="https://formsubmit.co/cristian.qyra@gmail.com" method="POST" class="contacto-from"
+            <form action="https://formsubmit.co/cristian.qyra@gmail.com" method="POST" class="contacto-form">
                 <div class="form-group">
                     <label for="nombre">Nombre o Empresa</label>
-                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                    <input type="text" id="nombre" name="nombre" required placeholder="contacto@empresa.com">
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
+                    <label for="email">Tu Correo electronico</label>
                     <input type="email" id="email" name="email" required placeholder="contacto@empresa.com">
                 </div>
                 
