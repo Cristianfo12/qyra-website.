@@ -1,4 +1,7 @@
 /* ================= VARIABLES DE COLOR ================= */
+html{
+    scroll-behavior: smooth;
+}
 :root {
     --azul-corporativo: #0A2540; /* Un azul muy oscuro y elegante */
     --azul-vibrante: #007BFF; /* Azul tecnológico para botones */
@@ -30,6 +33,13 @@ header {
     align-items: center;
     padding: 15px 100px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra suave y elegante */
+}
+/* es para dejar el menu y siempre este ubicado arriba */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* para que siempre este por encima de todo. */
 }
 
 .logo-container img {
@@ -89,6 +99,7 @@ button:hover {
 }
 
 /* ================= TARJETAS (CARDS) ================= */
+
 .servicio-card, .proyecto-card {
     background-color: var(--blanco-puro);
     padding: 30px;
@@ -98,6 +109,11 @@ button:hover {
     max-width: 800px;
     text-align: left;
     border-left: 5px solid var(--azul-vibrante); /* Toque de diseño corporativo */
+}
+.servicio-card:hover, .proyecto-card:hover {
+    transform: translatey(-10px); /* sube la tarjeta 10 pixeles */
+    transition: all 0.3s ease; /* hace que el movimiento sea suave */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra mas fuerte al resaltar */
 }
 
 /* ================= FORMULARIO DE CONTACTO ================= */
@@ -159,6 +175,38 @@ footer {
     padding: 20px;
     margin-top: 40px;
     font-size: 0.9rem;
+}
+
+/* ================= SECCIÓN DE HABILIDADES (SKILLS) ================= */
+/* Contenedor principal de las etiquetas de habilidades.
+   Usamos 'flex' para que las etiquetas se acomoden solas una al lado de la otra.
+   'flex-wrap: wrap' permite que si no caben en una línea, bajen a la siguiente (vital para móviles).
+*/
+.skills-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las etiquetas en la pantalla. */
+    gap: 15px;               /* Crea una separacion uniforme entre etiquetas */
+    margin-top: 30px;        /* Espacio superior respecto al titulo */
+}
+
+/* Estilo individual de cada etiqueta (píldora).
+   Vinculamos los colores usando las variables corporativas para mantener la consistencia.
+*/
+.skills-tag{
+    background-color: var(--azul-corporativo); /* Usamos color principal */
+    color: var(--blanco-puro);
+    padding: 10px 20px;
+    border-radius: 50px;        /* Crea el efecto de "Pildora" redondeada */
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease; /* Buena practica: preparar para efecto hover*/
+}
+
+/* Buena práctica: Añadir un pequeño efecto visual al pasar el mouse */
+.skills-tag:hover{
+    background-color: var(--azul-vibrante);
+    cursor: default;
 }
 
 /* ================= RESPONSIVE DESIGN (MÓVILES Y TABLETS) ================= */
