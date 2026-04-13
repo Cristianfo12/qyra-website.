@@ -64,49 +64,178 @@ nav a:hover {
     color: var(--azul-vibrante);
 }
 
-/* ================= SECCIÓN PRINCIPAL (HERO) ================= */
-/* OPTIMIZACIÓN DE SECCIONES GENERALES */
-/* Esto asegura que 'main' y 'habilidades' compartan el mismo espacio y centrado */
-main section, #habilidades, #sobre-mi, #contacto, #portafolio, #servicios, #inicio{
-    padding: 80px 50px;
+/* ================= 1. CABECERA ESTRATÉGICA (Nuevo Hero) ================= */
+#presentacion-corporativa {
+    background-color: var(--azul-corporativo);
+    color: var(--blanco-puro);
+    padding: 120px 20px;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* --- LA SOLUCIÓN MÁGICA AQUÍ --- */
-    /* Crea un colchón invisible arriba del elemento para el scroll pegajoso */
-    scroll-margin-top: 90px;
+    /* Un ligero patrón o degradado de fondo lo hace ver más "tech" */
+    background-image: linear-gradient(135deg, var(--azul-corporativo) 0%, #1a3a5c 100%);
 }
-main section {
-    padding: 60px 50px;
+
+#presentacion-corporativa h1{
+    font-size: 3.2rem;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    line-height: 1.2;
+}
+
+#presentacion-corporativa p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #e2e8f0; /* Un blanco grisáceo para no cansar la vista */
+}
+
+.btn-primario {
+    background-color: var(--azul-vibrante);
+    color: var(--blanco-puro);
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primario:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Efecto de presionar/elevar */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* ================= 2. PROPUESTA DE VALOR ================= */
+#propuesta-valor {
+    background-color: var(--blanco-puro);
+    padding: 80px 20px;
+}
+
+.contenedor-texto-centrado {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
 }
 
-#inicio {
-    background-color: var(--azul-corporativo);
-    color: var(--blanco-puro);
+.contenedor-texto-centrado h2 {
+    color:var(--azul-corporativo);
+    font-size: 2,5rem;
+    margin-bottom: 25px;
+}
+
+.contenedor-texto-centrado p {
+    font-size: 1.15rem;
+    color: var(--texto-secundario);
+    line-height: 1.8;
+}
+
+/* ================= 3. IDENTIDAD CORPORATIVA (Tarjetas Dinámicas) ================= */
+#identidad-corporativa {
+    background-color: var(--gris-fondo);
+    padding: 80px 20px;
+}
+
+.tarjetas-identidad-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* La magia responsive: crea 3 columnas en PC, y 1 en móviles automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-identidad {
+    background-color: var(--blanco-puro);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0,04);
+    border-top: 4px solid var(--azul-vibrante); /* Toque corporativo en la parte superior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-identidad:hover {
+    transform: translateY(-10px); /* La tarjeta "flota" hacia arriba */
+    box-shadow: 0 15px 30px rgba(0,37,64,0.1); /* Sombra más pronunciada */
+}
+
+.tarjeta-identidad h3 {
+    color: var(--azul-corporativo);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.tarjeta-identidad p{
+    color: var(--texto-secundario);
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+/* ================= 4. MOSAICO DE SOLUCIONES (Preparado para videos/imágenes) ================= */
+
+#mosaico-soluciones {
+    background-color: var(--blanco-puro);
     padding: 100px 20px;
 }
 
-#inicio h1 {
+#mosaico-soluciones h2 {
+    text-align: center;
+    color: var(--azul-corporativo);
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
-button {
-    background-color: var(--azul-vibrante);
+.mosaico-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.mosaico-item {
+    position: relative;
+    background-color: var(--azul-corporativo); /* Fondo por defecto mientras pones videos */
+    border-radius: 12px;
+    overflow: hidden; /* Asegura que el video no se salga de los bordes redondeados */
+    min-height: 300px;  /* Altura de las cajas del mosaico */
+    display: flex;
+    align-items: flex-end; /* Empuja el texto hacia abajo */
+    transition: transform 0.3s ease;
+}
+
+/* Regla para cuando insertes tus imágenes o videos en el HTML */
+.mosaico-item video,
+.mosaico-item img {
+    position: adsolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* El video se queda atrás */
+}
+
+/* El texto va por encima del video con un degradado oscuro para que siempre se lea */
+.mosaico-.contenido {
+    z-index: 2; /* Eltexto se pone al frente */
+    background: linear-gradient(to top, rgba(10, 37, 64, 0.95) 0%, rgba(10,37,64,0.4) 100%);
+    width: 100%;
+    padding: 30px 20px;
+    border-bottom: 4px solid var(--azul-vibrante);
+}
+
+.mosaico-.contenido h3 {
     color: var(--blanco-puro);
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.mosaico-.contenido p {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    margin: 0;
 }
 
 /* ================= TARJETAS (CARDS) ================= */
@@ -337,5 +466,16 @@ footer {
     .servicio-card, .proyecto-card {
         padding: 20px;
         margin: 15px auto;
+    }
+
+    /* Ajustes móviles para la nueva página principal */
+    #presentacion-corporativa h1 {
+        font-size: 2.2rem;
+    }
+    .contenedor-texto-centrado h2, #mosaico-soluciones h2 {
+        font-size: 2rem;
+    }
+    .mosaico-item {
+        min-height: 250px;
     }
 }
