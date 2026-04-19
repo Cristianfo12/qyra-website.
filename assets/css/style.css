@@ -1,277 +1,363 @@
-/* ================= VARIABLES DE COLOR ================= */
-html{
-    scroll-behavior: smooth;
-}
+/* =========================================
+   1. VARIABLES DE DISEÑO (Fáciles de cambiar)
+   ========================================= */
 :root {
-    --azul-corporativo: #0A2540; /* Un azul muy oscuro y elegante */
-    --azul-vibrante: #007BFF; /* Azul tecnológico para botones */
-    --blanco-puro: #FFFFFF;
-    --gris-fondo: #F8F9FA;
-    --texto-principal: #333333;
+    --color-primario: #0056b3;     /* Azul corporativo */
+    --color-primario-hover: #003d82;
+    --color-fondo: #ffffff;
+    --color-fondo-secundario: #f4f7f6;
+    --color-texto: #333333;
+    --color-texto-claro: #666666;
+    --color-blanco: #ffffff;
+    --fuente-principal: 'Inter', sans-serif;
+    --ancho-maximo: 1200px;
+    --transicion: all 0.3s ease;
 }
 
-/* ================= RESETEO BÁSICO ================= */
+/* =========================================
+   2. RESET Y ESTILOS BASE
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box; /* Fundamental para que nada se desordene */
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
 }
 
 body {
-    background-color: var(--gris-fondo);
-    color: var(--texto-principal);
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* ================= ENCABEZADO Y NAVEGACIÓN ================= */
-header {
-    background-color: var(--blanco-puro);
-    display: flex;
-    justify-content: flex-start; /* mover todo a la izquierda */
-    gap: 100px; /* crear un espacio elegante entre el logo  y el menu */
-    align-items: center;
-    padding: 15px 100px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra suave y elegante */
-}
-/* es para dejar el menu y siempre este ubicado arriba */
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* para que siempre este por encima de todo. */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.logo-container img {
-    height: 50px; /* Ajusta el tamaño de tu logo aquí */
-    width: auto;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
+a {
     text-decoration: none;
-    color: var(--azul-corporativo);
-    font-weight: 600;
-    transition: color 0.3s;
+    color: inherit;
 }
 
-nav a:hover {
-    color: var(--azul-vibrante);
+ul {
+    list-style: none;
 }
 
-/* ================= 1. CABECERA ESTRATÉGICA (Nuevo Hero) ================= */
-#presentacion-corporativa {
-    background-color: var(--azul-corporativo);
-    color: var(--blanco-puro);
-    padding: 120px 20px;
+/* =========================================
+   3. CLASES UTILITARIAS
+   ========================================= */
+.container {
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
     text-align: center;
-    /* Un ligero patrón o degradado de fondo lo hace ver más "tech" */
-    background-image: linear-gradient(135deg, var(--azul-corporativo) 0%, #1a3a5c 100%);
 }
 
-#presentacion-corporativa h1{
-    font-size: 3.2rem;
-    max-width: 900px;
-    margin: 0 auto 20px auto;
-    line-height: 1.2;
-}
-
-#presentacion-corporativa p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    color: #e2e8f0; /* Un blanco grisáceo para no cansar la vista */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--color-primario);
 }
 
 .btn-primario {
-    background-color: var(--azul-vibrante);
-    color: var(--blanco-puro);
-    padding: 16px 40px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 12px 28px;
     border-radius: 6px;
+    font-weight: 600;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: var(--transicion);
 }
 
 .btn-primario:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px); /* Efecto de presionar/elevar */
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    background-color: var(--color-primario-hover);
+    transform: translateY(-2px);
 }
 
-/* ================= 2. PROPUESTA DE VALOR ================= */
-#propuesta-valor {
-    background-color: var(--blanco-puro);
-    padding: 80px 20px;
+.btn-block {
+    width: 100%;
 }
 
-.contenedor-texto-centrado {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+/* =========================================
+   4. ENCABEZADO Y NAVEGACIÓN
+   ========================================= */
+.main-header {
+    background-color: var(--color-blanco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.contenedor-texto-centrado h2 {
-    color:var(--azul-corporativo);
-    font-size: 2,5rem;
-    margin-bottom: 25px;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
 }
 
-.contenedor-texto-centrado p {
-    font-size: 1.15rem;
-    color: var(--texto-secundario);
-    line-height: 1.8;
+.logo-img {
+    height: 50px;
 }
 
-/* ================= 3. IDENTIDAD CORPORATIVA (Tarjetas Dinámicas) ================= */
-#identidad-corporativa {
-    background-color: var(--gris-fondo);
-    padding: 80px 20px;
-}
-
-.tarjetas-identidad-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    /* La magia responsive: crea 3 columnas en PC, y 1 en móviles automáticamente */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.main-nav ul {
+    display: flex;
     gap: 30px;
 }
 
-.tarjeta-identidad {
-    background-color: var(--blanco-puro);
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0,04);
-    border-top: 4px solid var(--azul-vibrante); /* Toque corporativo en la parte superior */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.main-nav a {
+    font-weight: 600;
+    transition: var(--transicion);
 }
 
-.tarjeta-identidad:hover {
-    transform: translateY(-10px); /* La tarjeta "flota" hacia arriba */
-    box-shadow: 0 15px 30px rgba(0,37,64,0.1); /* Sombra más pronunciada */
+.main-nav a:hover {
+    color: var(--color-primario);
 }
 
-.tarjeta-identidad h3 {
-    color: var(--azul-corporativo);
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+/* Menú Móvil (Oculto en escritorio) */
+.menu-check {
+    display: none;
+}
+.menu-icono {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+.menu-icono span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-texto);
+    transition: var(--transicion);
 }
 
-.tarjeta-identidad p{
-    color: var(--texto-secundario);
-    font-size: 1.6rem;
-    line-height: 1.7;
-}
-
-/* ================= 4. MOSAICO DE SOLUCIONES (Preparado para videos/imágenes) ================= */
-
-#mosaico-soluciones {
-    background-color: var(--blanco-puro);
-    padding: 100px 20px;
-}
-
-#mosaico-soluciones h2 {
+/* =========================================
+   5. SECCIÓN INICIO (HERO)
+   ========================================= */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-fondo-secundario) 0%, #e9ecef 100%);
+    padding: 100px 0;
     text-align: center;
-    color: var(--azul-corporativo);
-    font-size: 2.5rem;
-    margin-bottom: 50px;
 }
 
-.mosaico-grid {
-    max-width: 1200px;
-    margin: 0 auto;
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--color-primario);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--color-texto-claro);
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* =========================================
+   6. SERVICIOS (Tarjetas)
+   ========================================= */
+.services-section {
+    padding: 80px 20px;
+}
+
+.services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
-.mosaico-item {
-    position: relative;
-    background-color: var(--azul-corporativo); /* Fondo por defecto mientras pones videos */
+.service-card {
+    background-color: var(--color-blanco);
+    border: 1px solid #eaeaea;
     border-radius: 12px;
-    overflow: hidden; /* Asegura que el video no se salga de los bordes redondeados */
-    min-height: 300px;  /* Altura de las cajas del mosaico */
-    display: flex;
-    align-items: flex-end; /* Empuja el texto hacia abajo */
-    transition: transform 0.3s ease;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+    transition: var(--transicion);
 }
 
-/* Regla para cuando insertes tus imágenes o videos en el HTML */
-.mosaico-item video,
-.mosaico-item img {
-    position: adsolute;
-    top: 0;
-    left: 0;
+.service-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+
+.service-header h2 {
+    font-size: 1.5rem;
+    color: var(--color-primario);
+}
+
+.service-header h3 {
+    font-size: 1.1rem;
+    color: var(--color-texto-claro);
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.sub-servicios {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sub-servicio-card h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--color-fondo-secundario);
+    padding-bottom: 5px;
+}
+
+.sub-servicio-card ul {
+    list-style: disc inside;
+    font-size: 0.9rem;
+    color: var(--color-texto-claro);
+}
+
+/* =========================================
+   7. PROPUESTA DE VALOR
+   ========================================= */
+.value-proposition {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 60px 20px;
+}
+
+.value-proposition h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.value-proposition p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   8. PORTAFOLIO (Mosaico)
+   ========================================= */
+.portfolio-section {
+    padding: 80px 20px;
+}
+
+.mosaico-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.mosaico-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 250px;
+    background-color: #000;
+}
+
+.mosaico-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1; /* El video se queda atrás */
+    opacity: 0.7;
+    transition: var(--transicion);
 }
 
-/* El texto va por encima del video con un degradado oscuro para que siempre se lea */
-.mosaico-.contenido {
-    z-index: 2; /* Eltexto se pone al frente */
-    background: linear-gradient(to top, rgba(10, 37, 64, 0.95) 0%, rgba(10,37,64,0.4) 100%);
+.mosaico-item:hover video {
+    opacity: 0.4;
+    transform: scale(1.05);
+}
+
+.mosaico-contenido {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    padding: 30px 20px;
-    border-bottom: 4px solid var(--azul-vibrante);
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: var(--color-blanco);
 }
 
-.mosaico-.contenido h3 {
-    color: var(--blanco-puro);
+.mosaico-texto-puro {
+    background-color: var(--color-primario-hover);
+}
+
+.mosaico-texto-puro .mosaico-contenido {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: none;
+}
+
+/* =========================================
+   9. SOBRE MÍ E IDENTIDAD
+   ========================================= */
+.identity-section {
+    padding: 40px 20px 80px;
+}
+
+.identidad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-identidad {
+    background-color: var(--color-fondo-secundario);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.tarjeta-identidad h3 {
+    color: var(--color-primario);
+    margin-bottom: 15px;
     font-size: 1.5rem;
+}
+
+/* =========================================
+   10. FOOTER Y FORMULARIO DE CONTACTO
+   ========================================= */
+.main-footer {
+    background-color: #111;
+    color: var(--color-blanco);
+    padding: 60px 0 0;
+}
+
+.contacto-container {
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.contacto-texto h2 {
+    color: var(--color-blanco);
     margin-bottom: 10px;
 }
 
-.mosaico-.contenido p {
-    color: #e2e8f0;
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-/* ================= TARJETAS (CARDS) ================= */
-
-.servicio-card, .proyecto-card {
-    background-color: var(--blanco-puro);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: left;
-    border-left: 5px solid var(--azul-vibrante); /* Toque de diseño corporativo */
-}
-.servicio-card:hover, .proyecto-card:hover {
-    transform: translatey(-10px); /* sube la tarjeta 10 pixeles */
-    transition: all 0.3s ease; /* hace que el movimiento sea suave */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra mas fuerte al resaltar */
-}
-
-/* ================= FORMULARIO DE CONTACTO ================= */
-footer {
-    background-color: var(--blanco-puro);
-    text-align: center;
-    padding-top: 40px;
+.contacto-texto p {
+    color: #aaa;
+    margin-bottom: 30px;
 }
 
 .contacto-form {
-    background-color: var(--gris-fondo);
+    background-color: #222;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    margin: 30px auto;
-    max-width: 600px;
-    text-align: left;
-    border-top: 5px solid var(--azul-corporativo); /* Línea decorativa superior */
+    border-radius: 12px;
 }
 
 .form-group {
@@ -281,201 +367,70 @@ footer {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--azul-corporativo);
-}
-
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: inherit; /* Usa la misma letra que el resto de la página */
-}
-
-/* Efecto cuando el usuario hace clic para escribir */
-.form-group input:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--azul-vibrante);
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-}
-
-.contacto-form button {
-    width: 100%; /* Hacemos el botón súper ancho para llamar la atención */
-    font-size: 1.1rem;
-    padding: 15px;
-}
-
-.derechos {
-    background-color: var(--azul-corporativo);
-    color: var(--blanco-puro);
-    padding: 20px;
-    margin-top: 40px;
+    color: #ccc;
     font-size: 0.9rem;
 }
 
-/* ================= SECCIÓN DE HABILIDADES (SKILLS) ================= */
-/* Contenedor principal de las etiquetas de habilidades.
-   Usamos 'flex' para que las etiquetas se acomoden solas una al lado de la otra.
-   'flex-wrap: wrap' permite que si no caben en una línea, bajen a la siguiente (vital para móviles).
-*/
-/* ESTILOS DE HABILIDADES OPTIMIZADOS */
-.skills-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra las etiquetas en la pantalla. */
-    gap: 15px;               /* Crea una separacion uniforme entre etiquetas */
-    margin-top: 40px;        /* Espacio superior respecto al titulo */
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #333;
+    color: var(--color-blanco);
+    font-family: inherit;
 }
 
-/* Estilo individual de cada etiqueta (píldora).
-   Vinculamos los colores usando las variables corporativas para mantener la consistencia.
-*/
-.skills-tag{
-    background-color: var(--azul-corporativo); /* Usamos color principal */
-    color: var(--blanco-puro);
-    padding: 12px 25px;
-    border-radius: 50px;        /* Crea el efecto de "Pildora" redondeada */
-    font-weight: 600;
-    font-size: 0.95rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border: 2px solid transparent; /* Preparamos el borde para el hover */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
 }
 
-/* Buena práctica: Añadir un pequeño efecto visual al pasar el mouse */
-.skills-tag:hover{
-    background-color: var(--blanco-puro);
-    color: var(--azul-vibrante);
-    border: 2px solid var(--azul-vibrante);
-    transform: scale(1.1); /* Hace que la píldora crezca un poquito al tocarla */
-    cursor: default;
+.derechos {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-/* ================= SECCIÓN SOBRE MÍ ================= */
-/* Esta regla es específica para el ID #sobre-mi. 
-   Al estar debajo de 'main section', esta regla tiene prioridad y 
-   le añade el fondo blanco y la sombra de tarjeta. */
-#sobre-mi {
-    background-color: var(--blanco-puro);
-    border-radius: 15px;    /* Bordes redondeados para que parezca una tarjeta */
-    margin-bottom: 60px;    /* Espacio antes de llegar al contacto */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave profesional */
-    max-width: 990px;        /* Hacemos que el texto no sea tan ancho y sea fácil de leer */
-    margin-left: auto;      /* Centrado horizontal */
-    margin-right: auto;     /* Centrado horizontal */
-}
-
-/* ================= ESTILOS DEL MENÚ DESPLEGABLE ================= */
-#menu-check{
-    display: none; /* Escondemos el cuadrito del checkbox*/
-}
-
-.menu-icono{
-    display: none; /* Por defecto (en PC) nose ve el icono de hamburguesa*/
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.menu-icono span{
-    width: 30px;
-    height: 4px;
-    background-color: var(--azul-corporativo);
-    border-radius: 2px;
-    transition: all 0.3s;
-}
-
-/* ================= RESPONSIVE DESIGN (MÓVILES Y TABLETS) ================= */
-
-/* La regla mágica: Si la pantalla tiene un ancho máximo de 768px (tamaño típico de celular/tablet) aplica esto: */
-@media (max-width: 768px) {
-    
-    /* Mostramos el icono de hambuerguesa solo en moviles */
-    .menu-icono{
+/* =========================================
+   11. MEDIA QUERIES (Móviles y Tablets)
+   ========================================= */
+@media screen and (max-width: 768px) {
+    .menu-icono {
         display: flex;
     }
-
-    /* Ocultamos el menu original */
-    nav {
+    
+    .main-nav {
         position: absolute;
-        top: 100%;
-        left: 0;
+        top: 80px;
+        left: -100%;
         width: 100%;
-        background-color: var(--blanco-puro);
-        display: none; /*  Aqui esta la magia: oculto por defecto*/
+        background-color: var(--color-blanco);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transition: var(--transicion);
+    }
+
+    .main-nav ul {
         flex-direction: column;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        padding: 20px 0;
+        gap: 15px;
     }
 
-    nav Ul {
-        flex-direction: column;
-        padding: 20px;
-        gap:20px;
+    /* Lógica del menú móvil al hacer clic */
+    #menu-check:checked ~ .main-nav {
+        left: 0;
     }
 
-    /* CUANDO EL CHECKBOX ESTE MARCADO, MOSTRAR EL NAV */
-    #menu-check:checked ~ nav {
-        display: block;
-    }
-
-    /* OPcional: El icono de hamburgesa se transforma en X al abrir */
-    #menu-check:checked ~ .menu-icono span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    #menu-check:checked ~ .menu-icono span:nth-child(2) {
-        opacity: 0;
-    }
-    #menu-check:checked ~ .menu-icono span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -8px);
-    }
-
-
-    /* 1. El Encabezado: En lugar de estar uno al lado del otro, ponemos el logo arriba y el menú abajo */
-    header {
-        flex-direction: column; 
-        padding: 15px;
-        gap: 10px; /* reducimos el espacio entre el logo  y el menu en celulares*/
-    }
-
-    /* 2. El Menú: Si los botones no caben, los empuja a la siguiente línea en vez de salirse de la pantalla */
-    nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 15px; /* Reduce el espacio entre botones */
-    }
-
-    /* 3. Secciones: Reducimos los márgenes gigantes para aprovechar el espacio de la pantallita */
-    main section {
-        padding: 40px 20px; 
-    }
-
-    /* 4. Título Principal: Lo hacemos un poco más pequeño para que no ocupe toda la pantalla */
-    #inicio h1 {
-        font-size: 1.8rem; 
-    }
-
-    /* 5. Las Tarjetas de Proyectos/Servicios: Se ajustan solas al 100% del ancho disponible */
-    .servicio-card, .proyecto-card {
-        padding: 20px;
-        margin: 15px auto;
-    }
-
-    /* Ajustes móviles para la nueva página principal */
-    #presentacion-corporativa h1 {
+    .hero-content h1 {
         font-size: 2.2rem;
     }
-    .contenedor-texto-centrado h2, #mosaico-soluciones h2 {
-        font-size: 2rem;
-    }
-    .mosaico-item {
-        min-height: 250px;
+
+    .section-title {
+        font-size: 1.8rem;
     }
 }

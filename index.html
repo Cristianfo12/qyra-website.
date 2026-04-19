@@ -4,204 +4,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QYRA | Soluciones Tecnológicas y Desarrollo</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="assets/logos/Qyra Logo_Mesa de trabajo 1.png" alt="Logotipo QYRA">
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="assets/logos/Qyra Logo_Mesa de trabajo 1.png" alt="Logotipo QYRA" class="logo-img">
+            </div>
+
+            <input type="checkbox" id="menu-check" class="menu-check">
+            <label for="menu-check" class="menu-icono">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portafolio">Portafolio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <input type="checkbox" id="menu-check">
-        <label for="menu-check" class="menu-icono">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#habilidades">Habilidades</a></li> <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section id="presentacion-corporativa" class="page-header">
-           <h1>Ingenieria Tecnológica Estructurada para el Crecimiento Empresarial</h1> 
-           <p>Diseñamos, desarrollamos y optimizamos el ecosistema digital y la infraestructura de tu negocio para convertirlos en tu mayor ventaja competitiva.</p>
-           <burron class="btn-primario">Solicitar Auditoria Técnica</burron>
-        </section>
-
-        <section>
-            <<article class="service-card">
-                <h2>Desarrollo Web, SEO & Posicionamiento</h2>
-                <h3>Impulsamos tu Visibilidad y Ventas</h3>
-                <p>Una página web no debe ser un gasto, debe ser tu mejor activo comercial. Creamos plataformas ultrarrápidas, diseñadas específicamente para escalar en los buscadores y convertir visitantes en clientes reales.</p>
-                
-                <div class="sub-servicios">
-                    <div class="sub-servicio-card">
-                        <h4>Desglose Técnico</h4>
-                        <ul>
-                            <li>Arquitecturas Frontend (HTML5, CSS3, JavaScript, React/Vue).</li>
-                            <li>Optimización Core Web Vitals (Tiempos de carga &lt; 2s).</li>
-                            <li>Estructura semántica para indexación profunda en Google.</li>
-                            <li>Diseño UX/UI orientado a la conversión móvil.</li>
-                        </ul>
-                    </div>
-                    <div class="sub-servicio-card">
-                        <h4>Beneficios Corporativos</h4>
-                        <ul>
-                            <li>Reducción dramática del costo de adquisición de clientes.</li>
-                            <li>Posicionamiento orgánico a largo plazo (Tráfico gratuito).</li>
-                            <li>Autoridad de marca que transmite confianza inmediata.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-            <article class="service-card">
-                <h2>Sistemas de Gestión & Bases de Datos</h2>
-                <h3>Optimización Operativa y Datos Inteligentes</h3>
-                <p>El crecimiento empresarial requiere control. Construimos sistemas a medida que eliminan los errores manuales de Excel, unifican tus procesos y te entregan reportes financieros exactos en tiempo real.</p>
-                
-                <div class="sub-servicios">
-                    <div class="sub-servicio-card">
-                        <h4>Desglose Técnico</h4>
-                        <ul>
-                            <li>Diseño relacional avanzado (SQL Server, MySQL).</li>
-                            <li>Desarrollo de lógica de negocio y automatizaciones (Backend).</li>
-                            <li>Integración de periféricos (Lectores de código de barras, biométricos).</li>
-                            <li>Migraciones seguras e integridad referencial de datos.</li>
-                        </ul>
-                    </div>
-                    <div class="sub-servicio-card">
-                        <h4>Beneficios Corporativos</h4>
-                        <ul>
-                            <li>Control milimétrico de inventarios y reducción de mermas.</li>
-                            <li>Automatización de tareas repetitivas y ahorro de horas-hombre.</li>
-                            <li>Toma de decisiones directivas basadas en métricas reales.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-
-            <article class="service-card">
-                <h2>Infraestructura IT, Soporte y Hardware</h2>
-                <h3>La Columna Vertebral de tu Operación</h3>
-                <p>La tecnología solo es útil si siempre está disponible. Diseñamos la infraestructura física y lógica de tu empresa estableciendo protocolos de seguridad y contingencia operativa 24/7.</p>
-                
-                <div class="sub-servicios">
-                    <div class="sub-servicio-card">
-                        <h4>Desglose Técnico</h4>
-                        <ul>
-                            <li>Implementación de arquitecturas de red (LAN/WAN) seguras.</li>
-                            <li>Protocolos de redundancia de datos (Backups automáticos).</li>
-                            <li>Mantenimiento de hardware a nivel de componentes.</li>
-                            <li>Integración IoT y electrónica aplicada (Microcontroladores ESP32).</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="sub-servicio-card">
-                        <h4>Beneficios Corporativos</h4>
-                        <ul>
-                            <li>Minimización crítica del tiempo de inactividad (Downtime).</li>
-                            <li>Protección total contra pérdida de información vital.</li>
-                            <li>Prolongación de la vida útil de la inversión tecnológica.</li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <section id="propuestas-valor">
-            <div class="contenedor-texto-centrado"
-            <h2>Transformamos la tecnologia en rentabilidad</h2>
-            <p>Ayudamos a empresas que sienten  que su tecnologia actual las frena. Convertimos sistemas fragmentados o procesos manuales en ecosistemas digitales automatizados que aumentan la visibilidad, impulsan las ventas y optimizan cada recurso económico</p>
+        
+        <section id="inicio" class="hero-section">
+            <div class="container hero-content">
+               <h1>Ingeniería Tecnológica Estructurada para el Crecimiento Empresarial</h1> 
+               <p>Diseñamos, desarrollamos y optimizamos el ecosistema digital y la infraestructura de tu negocio para convertirlos en tu mayor ventaja competitiva.</p>
+               <a href="#contacto" class="btn-primario">Solicitar Auditoría Técnica</a>
             </div>
         </section>
 
-        <section id="identidad-corporativa">
-            <div class="tarjetas-identidad-container">
-            <article class="tarjeta-identidad">
-                <h3>Misión</h3>
-                <p>Democratizar el acceso a tecnologia de vanguardia para pymes y emprendedores. Desarrollamos herramientas de software y hardware potentes, accesibles y diseñadas con precisión para escalar junto a tu negocio.</p>
-            </article>
+        <section id="servicios" class="services-section container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                
+                <article class="service-card">
+                    <div class="service-header">
+                        <h2>Desarrollo Web & SEO</h2>
+                        <h3>Impulsamos tu Visibilidad</h3>
+                    </div>
+                    <p>Creamos plataformas ultrarrápidas, diseñadas específicamente para escalar en los buscadores y convertir visitantes en clientes reales.</p>
+                    <div class="sub-servicios">
+                        <div class="sub-servicio-card">
+                            <h4>Desglose Técnico</h4>
+                            <ul>
+                                <li>HTML5, CSS3, JS, React/Vue</li>
+                                <li>Optimización Core Web Vitals</li>
+                            </ul>
+                        </div>
+                        <div class="sub-servicio-card">
+                            <h4>Beneficios</h4>
+                            <ul>
+                                <li>Reducción del costo de adquisición</li>
+                                <li>Autoridad de marca inmediata</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="tarjeta-identidad">
-                <h3>Valores</h3>
-                <p>Nuestra arquitectura se sotiene en tres pilares: Transparencia técnica adsolute, Innovación con utilidad real, y un enfoque inquenbrantable en resultados medibles.</p>
-            </article>
+                <article class="service-card">
+                    <div class="service-header">
+                        <h2>Sistemas & Bases de Datos</h2>
+                        <h3>Optimización Operativa</h3>
+                    </div>
+                    <p>Construimos sistemas a medida que eliminan los errores manuales de Excel y te entregan reportes exactos en tiempo real.</p>
+                    <div class="sub-servicios">
+                        <div class="sub-servicio-card">
+                            <h4>Desglose Técnico</h4>
+                            <ul>
+                                <li>Diseño relacional (SQL, MySQL)</li>
+                                <li>Automatizaciones (Backend)</li>
+                            </ul>
+                        </div>
+                        <div class="sub-servicio-card">
+                            <h4>Beneficios</h4>
+                            <ul>
+                                <li>Control milimétrico de inventarios</li>
+                                <li>Ahorro de horas-hombre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-header">
+                        <h2>Infraestructura IT & Hardware</h2>
+                        <h3>La Columna Vertebral</h3>
+                    </div>
+                    <p>Diseñamos la infraestructura física y lógica de tu empresa estableciendo protocolos de seguridad y contingencia 24/7.</p>
+                    <div class="sub-servicios">
+                        <div class="sub-servicio-card">
+                            <h4>Desglose Técnico</h4>
+                            <ul>
+                                <li>Arquitecturas de red (LAN/WAN)</li>
+                                <li>Integración IoT (ESP32)</li>
+                            </ul>
+                        </div>
+                        <div class="sub-servicio-card">
+                            <h4>Beneficios</h4>
+                            <ul>
+                                <li>Minimización de inactividad</li>
+                                <li>Protección de información vital</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <section id="mosaico-soluciones">
-            <h2>Áreas de especialidad</h2>
+        <section class="value-proposition">
+            <div class="container text-center">
+                <h2>Transformamos la tecnología en rentabilidad</h2>
+                <p>Ayudamos a empresas que sienten que su tecnología actual las frena. Convertimos sistemas fragmentados o procesos manuales en ecosistemas digitales automatizados que aumentan la visibilidad, impulsan las ventas y optimizan cada recurso económico.</p>
+            </div>
+        </section>
+
+        <section id="portafolio" class="portfolio-section container">
+            <h2 class="section-title">Áreas de Especialidad</h2>
             <div class="mosaico-grid">
-
-                <div class="mosaico-itmen">
+                
+                <div class="mosaico-item">
                     <video poster="assets/img/poster-web.jpg" autoplay loop muted playsinline>
-                    <source src="assets/videos/video-web.mp4" type="video/mp4">
-                </video>
+                        <source src="assets/videos/video-web.mp4" type="video/mp4">
+                    </video>
                     <div class="mosaico-contenido">
-                        <h3>Prsencia & Posicionamiento</h3>
-                        <p>Desarrollo web y SEO avanzado. Construimos maquinas de captación digital optimizadas para conversión.</p>
+                        <h3>Presencia & Posicionamiento</h3>
+                        <p>Desarrollo web y SEO avanzado.</p>
                     </div>
                 </div>
 
-                <div class="mosaico-itmes">
-                    <div class="mosaico-contenido">
+                <div class="mosaico-item mosaico-texto-puro">
+                    <div class="mosaico-contenido dark-bg">
                         <h3>Inteligencia Operativa</h3>
-                        <p>istemas a medida y bases de datos. Automatización de inventarios y cuadros de mando financieros para decisiones exactas.</p>
+                        <p>Sistemas a medida y bases de datos. Automatización de inventarios.</p>
                     </div>
                 </div>
 
                 <div class="mosaico-item">
                     <video poster="assets/img/poster-soporte.jpg" autoplay loop muted playsinline>
-                    <source src="assets/videos/video-soporte.mp4" type="video/mp4">
-                </video>
+                        <source src="assets/videos/video-soporte.mp4" type="video/mp4">
+                    </video>
                     <div class="mosaico-contenido">
                         <h3>Soporte & Estructura 24/7</h3>
-                        <p>Infraestructura IT, redes y hardware. Redundancia de datos y monitoreo proactivo para garantizar tu operatividad continua.</p>
+                        <p>Redundancia de datos y monitoreo.</p>
                     </div>
                 </div>
+
             </div>
         </section>
+
+        <section id="sobre-mi" class="identity-section container">
+            <h2 class="section-title">Sobre QYRA</h2>
+            <div class="identidad-grid">
+                <article class="tarjeta-identidad">
+                    <h3>Misión</h3>
+                    <p>Democratizar el acceso a tecnología de vanguardia para pymes y emprendedores. Desarrollamos herramientas potentes, accesibles y diseñadas para escalar junto a tu negocio.</p>
+                </article>
+
+                <article class="tarjeta-identidad">
+                    <h3>Valores</h3>
+                    <p>Nuestra arquitectura se sostiene en tres pilares: Transparencia técnica absoluta, Innovación con utilidad real, y un enfoque inquebrantable en resultados medibles.</p>
+                </article>
+            </div>
+        </section>
+
     </main>  
 
-
-    <footer>
-         <section id="contacto">
-            <h2>Contacto</h2>
-            <p>¿Listo para optimizar tus procesos tecnológicos? Escríbeme y hablemos de tu proyecto.</p>
+    <footer class="main-footer">
+         <section id="contacto" class="container contacto-container">
+            <div class="contacto-texto text-center">
+                <h2>Contacto</h2>
+                <p>¿Listo para optimizar tus procesos tecnológicos? Escríbeme y hablemos de tu proyecto.</p>
+            </div>
             
-    <form action="https://formsubmit.co/cristian.qyra@gmail.com" method="POST" class="contacto-form">
+            <form action="https://formsubmit.co/cristian.qyra@gmail.com" method="POST" class="contacto-form">
                 <input type="hidden" name="_next" value="https://cristianfo12.github.io/qyra/">
-    
                 <input type="hidden" name="_captcha" value="false">
 
-        <div class="form-group">
-            <label for="nombre">Nombre o Empresa</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre o empresa">
-        </div>
-    
-        <div class="form-group">
-            <label for="email">Tu Correo electrónico</label>
-            <input type="email" id="email" name="email" required placeholder="tu-correo@gmail.com">
-        </div>
-    
-        <div class="form-group">
-            <label for="mensaje">¿En qué te puedo ayudar?</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describe tu necesidad o proyecto..."></textarea>
-        </div>
-    
-            <button type="submit">Enviar Mensaje</button>
-    </form>
-
+                <div class="form-group">
+                    <label for="nombre">Nombre o Empresa</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre o empresa">
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Tu Correo electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tu-correo@gmail.com">
+                </div>
+            
+                <div class="form-group">
+                    <label for="mensaje">¿En qué te puedo ayudar?</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Describe tu necesidad o proyecto..."></textarea>
+                </div>
+            
+                <button type="submit" class="btn-primario btn-block">Enviar Mensaje</button>
+            </form>
         </section>
         
         <div class="derechos">
