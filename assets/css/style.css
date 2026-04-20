@@ -91,6 +91,14 @@ ul {
     width: 100%;
 }
 
+/* Asegura que las tarjetas de portafolio no tengan estilos de link azul/subrayado */
+
+.mosaico-grid a.mosaico-item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 /* =========================================
    4. ENCABEZADO Y NAVEGACIÓN
    ========================================= */
@@ -183,28 +191,51 @@ ul {
 
 .service-card {
     background-color: var(--color-blanco);
-    border: 1px solid #eaeaea;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-    transition: var(--transicion);
-}
-
-.service-card:hover {
+    border: 1px solid #e0e0e0; /* Borde más definido */ 
+    border-radius: 15px;
+    padding: 35px;
+    /* Sombra más profunda para dar volumen (Efecto Elevado) */
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transform: translateY(-5px);
+    transition: var(--transicion);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.service-header h2 {
-    font-size: 1.5rem;
-    color: var(--color-primario);
+/* Efecto visual al pasar el cursor (Hover) */
+.service-card:hover {
+    transform: translatey(-10px);
+    box-shadow: 0 15px 30px rgba(0,86,179,0.2);/* Sombra azulada al resaltar */
+    border-color: var(--color-primario);
 }
 
-.service-header h3 {
-    font-size: 1.1rem;
-    color: var(--color-texto-claro);
-    margin-bottom: 15px;
-    font-weight: 400;
+/* Encabezado de la tarjeta (El rectángulo azul de arriba) */
+.service-card .service-header-box {
+    background-color: var(--color-primario);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* CORRECCIÓN DE TEXTO: Ahora las letras serán blancas sobre el azul */
+.service-card .service-header-box h2 {
+    font-size: 1.4rem;
+    color: var(--color-blanco) !important;
+    margin: 0;
+}
+
+.service-card .service-header-box h3 {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* Estilo para el contenido descriptivo (Debajo del azul) */
+.service-card p {
+    color: var(--color-texto);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
 }
 
 .sub-servicios {
@@ -214,11 +245,11 @@ ul {
     gap: 15px;
 }
 
-.sub-servicio-card h4 {
-    font-size: 1rem;
-    margin-bottom: 8px;
+.sub-servicios h4 {
+    color: var(--color-primario);
     border-bottom: 2px solid var(--color-fondo-secundario);
     padding-bottom: 5px;
+    margin-top: 15px;
 }
 
 .sub-servicio-card ul {
@@ -433,4 +464,197 @@ ul {
     .section-title {
         font-size: 1.8rem;
     }
+}
+
+/* =========================================
+   12. ESTILOS ESPECÍFICOS PARA LANDINGS DE SERVICIOS
+   ========================================= */
+
+/* Encabezado especial para las páginas de servicio */
+
+.service-header {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-hover) 100%);
+    color: var(--color-blanco);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0 0 30px 30px; /* Curva elegante al final del header */
+    margin-bottom: 40px;
+}
+
+.service-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Grid para mostrar los diferentes paquetes (Preventivo, Correctivo, etc.) */
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Tarjetas internas de las landing pages */
+
+.card-servicio {
+    background: var(--color-blanco);
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: var(--transicion);
+}
+
+.card-servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-servicio h2 {
+    color: var(--color-primario);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Estilo de checks para las listas de beneficios */
+
+.card-servicio ul {
+    list-style: none;
+}
+
+.card-servicio li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.card-servicio li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--color-primario);
+    font-weight: bold;
+}
+
+/* Botón para volver a la página principal */
+
+.btn-volver {
+    margin-top: 20px;
+    background: rgba(255,255,255,0.2);
+    color: var(--color-blanco);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-blanco);
+    transition: var(--transicion);
+}
+
+.btn-volver:hover {
+    background: var(--color-blanco);
+    color: var(--color-primario);
+}
+
+/* =========================================
+   13. EFECTOS VISUALES LANDING POTENCIACIÓN (Blog y Expandibles)
+   ========================================= */
+
+/* Hero con imagen de fondo oscura para resaltar el texto blanco */
+.hero-service {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-blanco);
+}
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+/* Tarjeta estilo Blog (Imagen 3) */
+.card-expandible {
+    background: var(--color-blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: var(--transicion);
+}
+
+.card-img-container {
+    position: relative;
+    overflow: hidden; /* Fundamental para que el zoom no se salga de la tarjeta */
+    height: 200px;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto Agrandar Imagen al pasar el mouse */
+.card-expandible:hover .card-img-container img {
+    transform: scale(1.1);
+}
+
+/* Título sobre la imagen */
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 86, 179, 0.85); /* Azul corporativo con 85% de opacidad */
+    color: var(--color-blanco);
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Estilo para el despliegue de información (Etiqueta <details>) */
+details {
+    margin-top: 15px;
+    cursor: pointer;
+    background: var(--color-fondo-secundario);
+    padding: 10px;
+    border-radius: 8px;
+    transition: var(--transicion);
+}
+
+summary {
+    font-weight: 600;
+    color: var(--color-primario);
+    outline: none;
+}
+
+.lista-detallada {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    padding-left: 20px;
+    color: var(--color-texto);
+}
+
+/* Enlace de "Leer más / Solicitar Servicio" */
+.leer-mas {
+    display: block;
+    margin-top: 20px;
+    color: var(--color-primario);
+    font-weight: bold;
+    text-align: right;
+    transition: var(--transicion);
+}
+
+.leer-mas:hover {
+    color: var(--color-primario-hover);
 }
